@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>High School Learning Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  margin:0;
+  background:#f4f6f9;
+}
+
+/* LOGIN PAGE */
+#loginPage{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(to right,#1e3c72,#2a5298);
+}
+.login-box{
+  background:#fff;
+  padding:30px;
+  width:320px;
+  border-radius:8px;
+  text-align:center;
+}
+.login-box h2{
+  margin-bottom:20px;
+}
+.login-box input{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+}
+.login-box button{
+  width:100%;
+  padding:10px;
+  background:#1e3c72;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  font-size:16px;
+}
+
+/* MAIN WEBSITE */
+#mainSite{
+  display:none;
+}
+
+/* HEADER */
+header{
+  background:#0b3c5d;
+  color:#fff;
+  padding:15px 20px;
+  font-size:22px;
+}
+
+/* NAVBAR */
+nav{
+  background:#1e88e5;
+  display:flex;
+  flex-wrap:wrap;
+}
+nav button{
+  flex:1;
+  padding:12px;
+  border:none;
+  background:none;
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+}
+nav button:hover{
+  background:#1565c0;
+}
+
+/* CONTENT */
+.content{
+  padding:20px;
+  display:none;
+}
+.content h2{
+  color:#0b3c5d;
+}
+.card{
+  background:#fff;
+  padding:15px;
+  margin:10px 0;
+  border-radius:6px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+ul{
+  padding-left:20px;
+}
+.mock-btn{
+  padding:8px 15px;
+  background:#1e88e5;
+  color:#fff;
+  border:none;
+  margin:5px 0;
+  cursor:pointer;
+}
+footer{
+  text-align:center;
+  padding:10px;
+  background:#e0e0e0;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage">
+  <div class="login-box">
+    <h2>Student Login</h2>
+    <input type="text" placeholder="Student ID">
+    <input type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p style="font-size:13px;">Demo Login Enabled</p>
+  </div>
+</div>
+
+<!-- MAIN WEBSITE -->
+<div id="mainSite">
+<header>DEFENCE EXAMINATION CBT 2026</header>
+
+<nav>
+  <button onclick="showSection('home')">Home</button>
+  <button onclick="showSection('english')">English</button>
+  <button onclick="showSection('math')">Math</button>
+  <button onclick="showSection('reasoning')">Reasoning</button>
+  <button onclick="showSection('gk')">GK</button>
+  <button onclick="showSection('mock')">Examination</button>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="content">
+  <h2>Welcome Student</h2>
+  <div class="card">
+    <p><b>Academic Year:</b> 2025–26</p>
+    <p><b>Class:</b> X</p>
+    <p><b>Upcoming Exam:</b> Monthly Assessment – 15 March</p>
+  </div>
+</div>
+
+<!-- ENGLISH -->
+<div id="english" class="content">
+  <h2>English</h2>
+  <div class="card">
+    <ul>
+      <li>Grammar: Tenses, Voice, Narration</li>
+      <li>Literature: Prose & Poetry</li>
+      <li>Writing Skills: Essay, Letter, Notice</li>
+    </ul>
+  </div>
+</div>
+
+<!-- MATH -->
+<div id="math" class="content">
+  <h2>Mathematics</h2>
+  <div class="card">
+    <ul>
+      <li>Algebra: Linear Equations</li>
+      <li>Geometry: Triangles, Circles</li>
+      <li>Statistics & Probability</li>
+    </ul>
+  </div>
+</div>
+
+<!-- REASONING -->
+<div id="reasoning" class="content">
+  <h2>Reasoning</h2>
+  <div class="card">
+    <ul>
+      <li>Analogy & Classification</li>
+      <li>Series (Number & Alphabet)</li>
+      <li>Blood Relation & Direction</li>
+    </ul>
+  </div>
+</div>
+
+<!-- GK -->
+<div id="gk" class="content">
+  <h2>General Knowledge</h2>
+  <div class="card">
+    <ul>
+      <li>Indian History & Geography</li>
+      <li>Current Affairs 2024–25</li>
+      <li>Sports & Awards</li>
+    </ul>
+  </div>
+</div>
+
+<!-- MOCK TEST -->
+<div id="mock" class="content">
+  <h2>Mock Tests</h2>
+  <div class="card">
+    <button class="mock-btn">Mock Test 1</button><br>
+    <button class="mock-btn">Mock Test 2</button><br>
+    <button class="mock-btn">Mock Test 3</button>
+  </div>
+</div>
+
+<footer>
+  © 2026 High School Digital Learning System
+</footer>
+</div>
+
+<script>
+function login(){
+  document.getElementById("loginPage").style.display="none";
+  document.getElementById("mainSite").style.display="block";
+  showSection('home');
+}
+
+function showSection(id){
+  let sections=document.getElementsByClassName("content");
+  for(let i=0;i<sections.length;i++){
+    sections[i].style.display="none";
+  }
+  document.getElementById(id).style.display="block";
+}
+</script>
+
+</body>
+</html>
